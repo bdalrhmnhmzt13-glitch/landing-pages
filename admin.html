@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم Admin - نهائية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>لوحة تحكم Admin</h1>
+
+        <form id="projectForm" class="form-card">
+            <div class="form-group">
+                <label>اسم المشروع</label>
+                <input type="text" id="projectName" placeholder="أدخل اسم المشروع" required>
+            </div>
+            <div class="form-group">
+                <label>وصف المشروع</label>
+                <textarea id="projectDesc" placeholder="أدخل وصف المشروع" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>رابط الصورة</label>
+                <input type="text" id="projectImg" placeholder="أدخل رابط الصورة" required>
+            </div>
+            <button type="submit">إضافة مشروع</button>
+        </form>
+
+        <div class="control-panel">
+            <input type="text" id="searchInput" placeholder="ابحث عن مشروع...">
+            <select id="sortSelect">
+                <option value="newest">الأحدث أولاً</option>
+                <option value="oldest">الأقدم أولاً</option>
+                <option value="name-asc">حسب الاسم A-Z</option>
+                <option value="name-desc">حسب الاسم Z-A</option>
+            </select>
+            <button id="exportBtn">تصدير المشاريع (JSON)</button>
+        </div>
+
+        <div class="projects-list" id="projectsList"></div>
+    </div>
+
+    <!-- نافذة معاينة الصورة -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
